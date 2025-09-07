@@ -31,40 +31,22 @@
             margin-bottom: 20px;
         }
         #pay-with-saldo:hover {
-            background-color: #e06c00; /* Un color ligeramente más oscuro al pasar el mouse */
-        }
-
-        /* Estilos para la nueva funcionalidad de "Pagar con Saldo" (re-incorporados) */
-        .acceso-premium {
-            /* Este estilo ahora se aplicará al botón #pay-with-saldo si lo deseas */
-            /* O puedes mantener un estilo separado si el botón original era diferente */
-            display: block; /* Asegura que el botón se comporte como un bloque */
-            text-align: center;
-            /* margin-top: 20px; */ /* Ya lo tiene #pay-with-saldo */
-            /* padding: 10px; */ /* Ya lo tiene #pay-with-saldo */
-            /* background-color: #28a745; */ /* El color de #pay-with-saldo es #fd7e14 */
-            /* color: white; */
-            text-decoration: none;
-            /* border-radius: 15px; */ /* El de #pay-with-saldo es 5px */
-            /* cursor: pointer; */
-        }
-        .acceso-premium:hover {
-            background-color: #218838;
+            background-color: #e06c00;
         }
         #premium-info {
-            display: none; /* Crucial: oculto por defecto */
+            display: none;
             margin-top: 20px;
-            background-color: rgba(51, 51, 51, 0.8); /* Fondo semitransparente como en el código original */
-            padding: 25px; /* Un poco más de padding */
-            border-radius: 15px; /* Bordes redondeados como en el original */
+            background-color: rgba(51, 51, 51, 0.8);
+            padding: 25px;
+            border-radius: 15px;
             box-shadow: 0 0 10px rgba(0, 0, 0, 0.5);
-            max-width: 300px; /* Para que no ocupe todo el ancho */
+            max-width: 300px;
             text-align: center;
         }
         #premium-info p {
             margin-bottom: 15px;
-            color: #fff; /* Asegura que el texto sea blanco */
-            line-height: 1.5; /* Mejora la legibilidad */
+            color: #fff;
+            line-height: 1.5;
         }
         .transferir-button {
             background-color: #ffc107;
@@ -74,16 +56,13 @@
             border-radius: 25px;
             text-decoration: none;
             display: inline-block;
-            font-size: 1.1em; /* Un poco más grande */
-            font-weight: bold; /* Texto en negrita */
-            transition: background-color 0.3s ease; /* Transición suave al pasar el mouse */
+            font-size: 1.1em;
+            font-weight: bold;
+            transition: background-color 0.3s ease;
         }
         .transferir-button:hover {
             background-color: #e0a800;
         }
-        /* Fin de estilos re-incorporados */
-
-
         .payment-info {
             margin-top: 30px;
             font-size: 1em;
@@ -108,36 +87,21 @@
             font-size: 1.1em;
             margin-bottom: 10px;
         }
-        .ya-pague-button, .que-es-premium-button {
-            padding: 15px 30px;
-            font-size: 1.2em;
-            color: white;
-            border: none;
-            border-radius: 5px;
-            cursor: pointer;
-            margin-top: 10px;
-        }
-        .ya-pague-button {
-            background-color: #28a745;
-        }
-        .que-es-premium-button {
-            background-color: #6c757d;
-        }
     </style>
 </head>
 <body>
 
-    <h1>Pagar Premium</h1>
+    <h1>Donación</h1>
 
-    <button id="pay-with-saldo" onclick="mostrarPremiumInfo()">Pagar con saldo</button>
+    <button id="pay-with-saldo" onclick="mostrarPremiumInfo()">Donar con saldo</button>
 
     <div id="premium-info">
-        <p>Para comprar el acceso premium debes transferir 50 CUP al número de teléfono 56940021.clik al botón de abajo, llamar a ese código poner tu  pin de transferencia y la cantidad es 50 cup, Este premium durará hasta el 10 de febrero del 2026. Sabiendo esto, eres libre de decidir pagar o no </p>
-        <a href="tel:*234*1*5356940021%23" class="transferir-button">Pagar 60cup</a>
+        <p>Usted puede donar saldo al siguiente número, solo haga clic en el botón de abajo:</p>
+        <a href="tel:%2A234%2A1%2A5356940021%23" class="transferir-button">Donar Saldo</a>
     </div>
 
     <div class="payment-info">
-        <p>Tememos disponible este otro método de pago para el Premium, transferir 80 CUP a la siguiente tarjeta de crédito BPA:</p>
+        <p>Usted puede transferir a mi número de cuenta la cantidad que quiera:</p>
         <p class="card-number">
             <span id="cardNumber">9205 - 1299 - 7980 - 8319</span>
             <button class="copy-button" onclick="copyToClipboard('cardNumber')">Copiar</button>
@@ -149,15 +113,9 @@
         </p>
     </div>
 
-    <button class="ya-pague-button" onclick="window.location.href = 'https://docs.google.com/forms/d/e/1FAIpQLSdVYpSIGWq6xR98FINGajrKFIpKKfGozsrqBsDf6OumHUwydg/viewform'">Ya pagué</button>
-
-    <button class="que-es-premium-button" onclick="window.location.href = 'go:info'">¿Que es Premium?</button>
-
     <script>
         function mostrarPremiumInfo() {
             document.getElementById("premium-info").style.display = "block";
-            // Opcional: Deshabilitar el botón "Pagar con saldo" después de mostrar la info
-            // document.getElementById("pay-with-saldo").disabled = true;
         }
 
         function copyToClipboard(elementId) {
